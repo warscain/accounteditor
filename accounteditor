@@ -1,0 +1,16 @@
+#!/bin/sh
+
+YEAR=`date +%Y`
+WORKPATH=./data
+DATAPATH=$WORKPATH/db
+SECPATH=$WORKPATH/secure
+DIALOG=${DIALOG=dialog}
+LANG=C
+export YEAR WORKPATH DATAPATH DIALOG LANG
+################ ENV check ##################
+
+
+################ DB check/init ###############
+sh ./utils/db.sh
+################ user login/create ###########
+sh ./utils/user.sh
